@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+	<style>
+		body {
+            background-color: #66ffee;
+        }
+		#red{
+			color:#ee0000
+		}
+		.title{
+			font-size:24px;
+			font-family:"Times News Roman"
+			font-family:"微軟正黑體"
+			font-weight:bold
+		}
+		.content{
+			font-size:20px;
+			font-family:"微軟正黑體"
+		}
+		.big{
+			font-size:32px;
+			font-family:"微軟正黑體"
+			font-weight:900
+		}
+	</style>
+  </head>
+  <body>
+    <div class='header'>
+		<p class="big">環境狀態</>
+	<div class='container'>
+		{% for post in postlist %}
+		<div class='topic'>
+			<span class="title">{{ post.title }}</span>:<span id="red" class="content">{{ post.content }}</span>
+			<hr width=8% align=left>
+				{% if post.photo %}
+			<div class='thumbnail'>
+				<span class="content">相片:<img src="{{ post.photo }}" alt=""></span>
+				{% else %}
+				<div class="thumbnail thumbnail-default">
+				{% endif %}
+					<div class='content'>
+						<!--之後放上modbus數值-->
+						<div class='timeandiocation'>
+							<span class="content">
+							創建時間:{{ post.created_at|date:"Y/m/d  A h:i" }} 
+							<!--A:AM H:24 h:12 i:分 s:秒-->
+							修改時間:{{ post.changed_at|date:"Y/m/d  A h:i" }}
+							地點:{{ post.location }}
+							</span>
+							<hr width=50% align=left>
+							<p> <a href= "/gettopic/"> download link</a> </p>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+		{% endfor %}
+    </div>
+  </body>
+</html>
