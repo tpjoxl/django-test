@@ -3,5 +3,4 @@
 _pycache_
 staticfiles
 Include
-Lib
 db.sqlite3
