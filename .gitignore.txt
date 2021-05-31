@@ -1,6 +1,4 @@
 # Scripts/.gitignore
 *.pyc
 _pycache_
-staticfiles
 Include
-db.sqlite3
