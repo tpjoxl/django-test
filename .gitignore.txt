@@ -1,0 +1,7 @@
+# Scripts/.gitignore
+*.pyc
+_pycache_
+staticfiles
+Include
+Lib
+db.sqlite3
